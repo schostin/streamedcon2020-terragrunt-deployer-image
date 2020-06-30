@@ -1,0 +1,25 @@
+name: Docker Build
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "*"
+jobs:
+  build:
+    name: Docker Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Get current time
+        uses: gerred/actions/current-time@master
+        id: current-time
+      - name: Docker Build
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: sebastianneb/gcloud-terragrunt-deployer
+          tag_with_ref: true
+          build_args: CREATED="${{ steps.current-time.outputs.time }}",VERSION="${{ github.ref }}",REVISION="${{ github.ref }}"
