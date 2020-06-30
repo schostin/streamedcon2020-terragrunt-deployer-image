@@ -1,9 +1,9 @@
 name: Docker Build
 on:
   push:
-    branches-ignore:
-      - master
-    tags-ignore:
+    branches:
+      - "*"
+    tags:
       - "*"
 jobs:
   build:
@@ -21,5 +21,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: sebastianneb/gcloud-terragrunt-deployer
-          tag_with_sha: true
-          build_args: CREATED="${{ steps.current-time.outputs.time }}",VERSION="${{ github.sha }}",REVISION="${{ github.ref }}"
+          tag_with_ref: true
+          build_args: CREATED="${{ steps.current-time.outputs.time }}",VERSION="${{ github.ref }}",REVISION="${{ github.ref }}"
