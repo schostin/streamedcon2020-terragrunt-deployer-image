@@ -13,7 +13,7 @@ ARG TERRAGRUNT_VERSION="v0.23.0"
 RUN curl -fsSL https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt \
   && chmod +x /usr/local/bin/terragrunt
 
-ARG TERRAFORM_VERSION="0.13.0-beta2"
+ARG TERRAFORM_VERSION="0.12.28"
 RUN curl -fsSL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip | unzip - \
   && chmod +x terraform \
   && mv terraform /usr/local/bin/terraform
