@@ -17,3 +17,5 @@ This release contains the first version of this Dockerfile with basic tooling:
 * GCloud-CLI in version `299.0.0`
 * Github action for running tflint.
 * Github action to validate gcloud connection.
+* Github action for terragrunt plan.
+* Github action for terragrunt apply.
