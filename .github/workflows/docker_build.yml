@@ -22,4 +22,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: sebastianneb/gcloud-terragrunt-deployer
           tag_with_ref: true
+          cache_froms: sebastianneb/gcloud-terragrunt-deployer:latest
           build_args: CREATED="${{ steps.current-time.outputs.time }}",VERSION="${{ github.ref }}",REVISION="${{ github.ref }}"
