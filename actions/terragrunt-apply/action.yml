@@ -1,0 +1,17 @@
+name: Terragrunt Apply
+description: "Run terragrunt apply in the specified directory"
+inputs:
+  gcloud_credentials_content:
+    description: The content of the Google Cloud Key.
+    required: true
+  terragrunt_subfolder:
+    description: The subfolder where the terragrunt apply shall be executed.
+    required: true
+    default: .
+runs:
+  using: "docker"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:terragruntApplyAndPlan"
+  entrypoint: terragrunt-apply.sh
+  args:
+    - ${{ inputs.gcloud_credentials_content }}
+    - ${{ inputs.terragrunt_subfolder }}

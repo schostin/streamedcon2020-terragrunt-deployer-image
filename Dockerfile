@@ -28,6 +28,7 @@ RUN curl -fsSL https://github.com/terraform-linters/tflint/releases/download/${T
 COPY actions/tflint/run_tflint.sh \
   actions/activate-gcloud-credentials/activate_gcloud_credentials.sh \
   actions/terragrunt-plan/terragrunt-plan.sh \
+  actions/terragrunt-apply/terragrunt-apply.sh \
   /usr/local/bin/
 
 ARG CREATED="unknown"
