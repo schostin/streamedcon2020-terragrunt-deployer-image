@@ -3,9 +3,9 @@
 set -eo pipefail
 
 DIRECTORY_TO_LINT=$1
-CURRENT_DIRECTORY=$(pwd)
+CONFIG_PATH=$2
 
 pushd "$DIRECTORY_TO_LINT"
 terraform init
-tflint -c "$CURRENT_DIRECTORY/.tflint.hcl".
+tflint -c "$CONFIG_PATH" .
 popd

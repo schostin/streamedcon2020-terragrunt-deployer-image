@@ -4,7 +4,11 @@ inputs:
   folder_to_lint:
     description: The folder where to run TFLint
     required: true
-    default: "."
+    default: .
+  path_to_config:
+    description: The path to the config file
+    required: true
+    default: .tflint.hcl
 runs:
   using: "docker"
   image: "docker://sebastianneb/gcloud-terragrunt-deployer:tflint"
