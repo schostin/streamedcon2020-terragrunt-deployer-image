@@ -1,6 +1,6 @@
 FROM google/cloud-sdk:299.0.0-alpine
 
-ENV GOOGLE_APPLICATION_CREDENTIALS=/home/google-credentials.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=/google-credentials.json
 
 WORKDIR /home
 
@@ -13,7 +13,7 @@ ARG TERRAGRUNT_VERSION="v0.23.0"
 RUN curl -fsSL https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt \
   && chmod +x /usr/local/bin/terragrunt
 
-ARG TERRAFORM_VERSION="0.12.28"
+ARG TERRAFORM_VERSION="0.12.29"
 RUN curl -fsSL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip | unzip - \
   && chmod +x terraform \
   && mv terraform /usr/local/bin/terraform
@@ -25,7 +25,7 @@ RUN curl -fsSL https://github.com/terraform-linters/tflint/releases/download/${T
   && chmod +x tflint \
   && mv tflint /usr/local/bin/tflint
 
-COPY actions/tflint/run_tflint.sh /usr/local/bin/run_tflint.sh
+COPY actions/tflint/run_tflint.sh actions/activate-gcloud-credentials/activate_gcloud_credentials.sh /usr/local/bin/
 
 ARG CREATED="unknown"
 ARG AUTHORS="Sebastian Neb"
