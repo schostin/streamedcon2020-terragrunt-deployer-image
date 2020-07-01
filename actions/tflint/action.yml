@@ -7,7 +7,7 @@ inputs:
     default: "."
 runs:
   using: "docker"
-  image: "docker:/sebastianneb/gcloud-terragrunt-deployer:v1.0.0-alpha"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:v1.0.0-alpha"
   entrypoint: run_tflint.sh
   args:
     - ${{ inputs.folder_to_lint }}
