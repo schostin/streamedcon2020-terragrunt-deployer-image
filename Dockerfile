@@ -46,3 +46,5 @@ RUN curl -fsSL https://github.com/terraform-linters/tflint/releases/download/${T
   && rm tflint.zip \
   && chmod +x tflint \
   && mv tflint /usr/local/bin/tflint
+
+COPY actions/tflint/run_tflint.sh /usr/local/bin/run_tflint.sh
