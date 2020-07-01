@@ -10,7 +10,7 @@ inputs:
     default: .
 runs:
   using: "docker"
-  image: "docker://sebastianneb/gcloud-terragrunt-deployer:terragruntApplyAndPlan"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:v1.0.1"
   entrypoint: terragrunt-apply.sh
   args:
     - ${{ inputs.gcloud_credentials_content }}

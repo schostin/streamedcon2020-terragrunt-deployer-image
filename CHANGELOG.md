@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.1] - 2020-97-01
+
+### Fixed
+
+* reference the expected tag for docker images.
+
+## [v1.0.0] - 2020-07-01
+
 This release contains the first version of this Dockerfile with basic tooling:
 
 ### Added

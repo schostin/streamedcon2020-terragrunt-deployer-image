@@ -11,7 +11,7 @@ inputs:
     default: ".tflint.hcl"
 runs:
   using: "docker"
-  image: "docker://sebastianneb/gcloud-terragrunt-deployer:tflint"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:v1.0.1"
   entrypoint: run_tflint.sh
   args:
     - ${{ inputs.folder_to_lint }}

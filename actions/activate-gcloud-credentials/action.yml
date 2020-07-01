@@ -6,7 +6,7 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: "docker://sebastianneb/gcloud-terragrunt-deployer:activateGcloudCredentials"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:v1.0.1"
   entrypoint: activate_gcloud_credentials.sh
   args:
     - ${{ inputs.gcloud_credentials_content }}
