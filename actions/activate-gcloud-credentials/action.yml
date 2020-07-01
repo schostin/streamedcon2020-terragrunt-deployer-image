@@ -1,0 +1,12 @@
+name: Activate GCloud Credentials
+description: "Run TFLint in the specified directory"
+inputs:
+  gcloud_credentials_content:
+    description: The content of the Google Cloud Key.
+    required: true
+runs:
+  using: "docker"
+  image: "docker://sebastianneb/gcloud-terragrunt-deployer:activateGcloudCredentials"
+  entrypoint: activate_gcloud_credentials.sh
+  args:
+    - ${{ inputs.gcloud_credentials_content }}
