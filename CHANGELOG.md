@@ -13,6 +13,7 @@ This release contains the first version of this Dockerfile with basic tooling:
 
 * TFLint in version `v0.17.0`
 * Terraform in version `v0.12.28`
-* Terragrunt in version `v0.23.0`
+* Terragrunt in version `v0.23.31`
 * GCloud-CLI in version `299.0.0`
 * Github action for running tflint.
+* Github action to validate gcloud connection.
