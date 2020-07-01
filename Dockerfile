@@ -25,7 +25,11 @@ RUN curl -fsSL https://github.com/terraform-linters/tflint/releases/download/${T
   && chmod +x tflint \
   && mv tflint /usr/local/bin/tflint
 
-COPY actions/tflint/run_tflint.sh actions/activate-gcloud-credentials/activate_gcloud_credentials.sh /usr/local/bin/
+COPY actions/tflint/run_tflint.sh \
+  actions/activate-gcloud-credentials/activate_gcloud_credentials.sh \
+  actions/terragrunt-plan/terragrunt-plan.sh \
+  actions/terragrunt-apply/terragrunt-apply.sh \
+  /usr/local/bin/
 
 ARG CREATED="unknown"
 ARG AUTHORS="Sebastian Neb"
