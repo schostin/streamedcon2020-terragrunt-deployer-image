@@ -1,0 +1,13 @@
+name: Tflint
+description: "Run TFLint in the specified directory"
+inputs:
+  folder_to_lint:
+    description: The folder where to run TFLint
+    required: true
+    default: "."
+runs:
+  using: "docker"
+  image: "docker:/sebastianneb/gcloud-terragrunt-deployer:v1.0.0-alpha"
+  entrypoint: run_tflint.sh
+  args:
+    - ${{ inputs.folder_to_lint }}
