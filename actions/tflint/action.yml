@@ -15,3 +15,4 @@ runs:
   entrypoint: run_tflint.sh
   args:
     - ${{ inputs.folder_to_lint }}
+    - ${{ inputs.path_to_config }}
